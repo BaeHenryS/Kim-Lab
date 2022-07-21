@@ -1,0 +1,24 @@
+function val = smctest(ic, value, rate)
+
+global smdata;
+
+switch ic(3)
+    case 1
+        %Checking if Python is installed
+        pe = pyenv;
+        if isempty(pe.Version)
+            disp 'Python not installed! Run the command: pyenv("Version","Your Path to Python")'
+        end
+        
+        
+        py.dacset.setVoltage(value)
+        disp(append('Voltage Set to ', string(value) , ' Volts'))
+
+    
+    case 0
+        disp(ic)
+      %  val = smdata.inst(ic(1)).data.val(ic(2));
+        %error('Set the Voltage!')
+    otherwise
+        error('Operation not supported');
+end

@@ -1,0 +1,6 @@
+classdef Instrument < QuantumDesign.QDInstrument.QDInstrumentBase
+    
+    methods
+        
+    end
+end
