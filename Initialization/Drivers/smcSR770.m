@@ -1,3 +1,7 @@
+%SR770 Driver
+%Version 1.2 
+%7-22-2022
+
 function val = smcSR770(ic, val)
 %Driver for the SR770
 
@@ -21,9 +25,15 @@ global smdata;
 
 % 1: (MEAS) Changes/Gets the measurement type on the current channel (5-6)
 %     values: {0: Spectrum, 1: PSD, 2: Time Record, 3: Octave Ana.}
+%
+% 2: (SPEC) Gets the Raw Data on the Display in Floating Point Number
+% (5-23)
+%
+% 3: (SPED) Gets the Raw Data on the Display in Binary (5-23)
+%
+% 4: (BVAL) Gets the x-axis interval of the plot on the screen by obtaining
+% the Start and the Center Frequency. 
 
-
-% 2: (SPED)Gets the Raw Data on the Table in Binary (5-23)
 
 
 
