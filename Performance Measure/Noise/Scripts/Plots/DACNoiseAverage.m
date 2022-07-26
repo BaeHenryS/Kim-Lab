@@ -1,3 +1,7 @@
+% DAC Noise Averaging 
+% Used Kim-Lab\Performance Measure\Noise\2022_07_25\Noise20220725_1_Workspace.mat
+% 
+
 dacv0_100k_vb_001_mod = dacv0_100k_vb_001;
 
 
@@ -26,7 +30,7 @@ end
 plot(linspace(-10,10, 21), dacv0_100k_vb_001_avg * 10^9, 'LineWidth',3)
 
 
-title('DAC Noise Measurement from -10V - 10V, 0 - 100kHz','Interpreter','latex','FontSize',24)
+title('Average DAC Noise Value from -10V - 10V, 0 - 100kHz','Interpreter','latex','FontSize',24)
 xlabel('Voltage $$(V)$$','Interpreter','latex','FontSize',16)
 ylabel('Noise $$(nV/\sqrt{Hz})$$','Interpreter','latex','FontSize',16)
 
@@ -62,7 +66,7 @@ end
 plot(linspace(-10,10, 21), dacv0_195_vb_001_avg * 10^9, 'LineWidth',3)
 
 
-title('DAC Noise Measurement from -10V - 10V, 25 - 195Hz','Interpreter','latex','FontSize',24)
+title('Average DAC Noise Value from -10V - 10V, 25 - 195Hz','Interpreter','latex','FontSize',24)
 xlabel('Voltage $$(V)$$','Interpreter','latex','FontSize',16)
 ylabel('Noise $$(nV/\sqrt{Hz})$$','Interpreter','latex','FontSize',16)
 

@@ -1,3 +1,9 @@
+
+% 1V Plot at 100kHz Range for DAC, YOKO, Keithley
+% Used Kim-Lab\Performance Measure\Noise\2022_07_21\Noise20220721_1_Workspace.mat
+% 
+
+
 lognoiseplot_100k = figure;
 
 figure(lognoiseplot_100k)

@@ -1,3 +1,10 @@
+
+% 1V Plot at 195Hz Range for DAC, YOKO, Keithley
+% Used Kim-Lab\Performance Measure\Noise\2022_07_21\Noise20220721_1_Workspace.mat
+% 
+
+
+
 lognoiseplot_195 = figure;
 
 figure(lognoiseplot_195)
