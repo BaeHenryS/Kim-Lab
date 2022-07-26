@@ -1,6 +1,6 @@
 for i = -10:10
     j = i + 11;
-    smset("NUDAC", i)
+    smset("Yoko", i)
     pause(1)
     fprintf(smdata.inst(18).data.inst, 'ARNG 0');
     pause(2)
@@ -11,7 +11,7 @@ for i = -10:10
     fprintf(smdata.inst(18).data.inst, 'ARNG');
     pause(1)
     fprintf(smdata.inst(18).data.inst, 'STRT');
-    pause(25)
-    dacv0_195_vb_001(:,j) = NoiseMeasurement(4);
+    pause(10)
+    yoko_100k_v_001(:,j) = NoiseMeasurement(4);
 end
 
