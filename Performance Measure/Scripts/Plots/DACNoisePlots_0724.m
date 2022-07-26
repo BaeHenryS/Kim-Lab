@@ -1,5 +1,5 @@
 
-%{
+
 dacv0_195_vb_001_mod = dacv0_195_vb_001;
 
 
@@ -20,7 +20,7 @@ f = fit(x_195_mod, dacv0_195_vb_001_mod(:,10), myfit);
 plot(x_195_mod, dacv0_195_vb_001_mod(:,10))
 hold on
 semilogy(x_195_mod, f(x_195_mod))
-%}
+
 
 %{
 for i = 1:21
@@ -31,7 +31,7 @@ for i = 1:21
     hold on
 end
 
-%}
+
 
 dacv0_100k_vb_001_mod = dacv0_100k_vb_001;
 
@@ -52,3 +52,4 @@ for i = 1:21
 end
 
 %colormap(prism(21))
+%}
