@@ -18,7 +18,7 @@ figure(DACNoise_ranged_buf_100k)
 legendcolors = jet(21);
 
 for i = 1:21
-   plot(x_100k_mod, dacv0_100k_vb_001_mod(:,i), 'DisplayName',string(i), 'Color',legendcolors(i,:))
+   plot(x_100k_mod, dacv0_100k_vb_001_mod(:,i)*10^9, 'DisplayName',string(i), 'Color',legendcolors(i,:))
    hold on
 end
 
@@ -59,7 +59,7 @@ figure(DACNoise_ranged_norm_100k)
 legendcolors = jet(21);
 
 for i = 1:21
-   plot(x_100k_mod, dacv0_100k_v_001_mod(:,i), 'DisplayName',string(i), 'Color',legendcolors(i,:))
+   plot(x_100k_mod, dacv0_100k_v_001_mod(:,i)*10^9, 'DisplayName',string(i), 'Color',legendcolors(i,:))
    hold on
 end
 
