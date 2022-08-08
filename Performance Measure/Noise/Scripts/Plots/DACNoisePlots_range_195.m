@@ -1,23 +1,24 @@
+%Noise Measurement Plot at -10V - 10V Output, 0 - 195Hz, Normal and
+%Buffered
+% Used Kim-Lab\Performance Measure\Noise\2022_07_25\Noise20220725_1_Workspace.mat
 
-yoko_100k_v_001_mod = yoko_100k_v_001;
-
-
-%yoko_100k_v_001_mod(1:10,:) = [];
-
-x_100k_mod = x_100k;
-
-%x_100k_mod(:,1:10) = [];
-
-x_100k_mod = reshape(x_100k_mod, [],1);
-DACNoise_ranged_norm_100k = figure;
-figure(DACNoise_ranged_norm_100k)
+dacv0_195_vb_001_mod = dacv0_195_vb_001;
 
 
+dacv0_195_vb_001_mod(1:10,:) = [];
+
+x_195_mod = x_195;
+
+x_195_mod(:,1:10) = [];
+
+x_195_mod = reshape(x_195_mod, [],1);
+DACNoise_ranged_buf_195 = figure;
+figure(DACNoise_ranged_buf_195)
 
 legendcolors = jet(21);
 
 for i = 1:21
-   semilogy(x_100k_mod, yoko_100k_v_001_mod(:,i)*10^9, 'DisplayName',string(i), 'Color',legendcolors(i,:))
+   plot(x_195_mod, dacv0_195_vb_001_mod(:,i)*10^9, 'DisplayName',string(i), 'Color',legendcolors(i,:))
    hold on
 end
 
@@ -30,7 +31,7 @@ cbh.Label.String = 'Voltage (V)';
 cbh.Label.FontSize = 20;
 cbh.Label.Interpreter = 'latex';
 
-title('Yoko Noise Measurement Plot at -10V - 10V Output, 0 - 100kHz','Interpreter','latex','FontSize',24)
+title('Noise Measurement Plot at -10V - 10V Buffered Output, 0 - 195Hz','Interpreter','latex','FontSize',24)
 xlabel('Frequency $$(kHz)$$','Interpreter','latex','FontSize',16)
 ylabel('Noise $$(nV/\sqrt{Hz})$$','Interpreter','latex','FontSize',16)
 
@@ -38,10 +39,12 @@ ylabel('Noise $$(nV/\sqrt{Hz})$$','Interpreter','latex','FontSize',16)
 
 
 
-yoko_195_v_001_mod = yoko_195_v_001;
 
 
-yoko_195_v_001_mod(1:10,:) = [];
+dacv0_195_v_001_mod = dacv0_195_v_001;
+
+
+dacv0_195_v_001_mod(1:10,:) = [];
 
 x_195_mod = x_195;
 
@@ -56,7 +59,7 @@ figure(DACNoise_ranged_norm_195)
 legendcolors = jet(21);
 
 for i = 1:21
-   plot(x_195_mod, yoko_195_v_001_mod(:,i)*10^9, 'DisplayName',string(i), 'Color',legendcolors(i,:))
+   plot(x_195_mod, dacv0_195_v_001_mod(:,i)*10^9, 'DisplayName',string(i), 'Color',legendcolors(i,:))
    hold on
 end
 
@@ -69,8 +72,8 @@ cbh.Label.String = 'Voltage (V)';
 cbh.Label.FontSize = 20;
 cbh.Label.Interpreter = 'latex';
 
-title('Yoko Noise Measurement Plot at -10V - 10V Output, 0 - 195Hz','Interpreter','latex','FontSize',24)
-xlabel('Frequency $$(Hz)$$','Interpreter','latex','FontSize',16)
+title('Noise Measurement Plot at -10V - 10V Output, 0 - 195Hz','Interpreter','latex','FontSize',24)
+xlabel('Frequency $$(kHz)$$','Interpreter','latex','FontSize',16)
 ylabel('Noise $$(nV/\sqrt{Hz})$$','Interpreter','latex','FontSize',16)
 
 

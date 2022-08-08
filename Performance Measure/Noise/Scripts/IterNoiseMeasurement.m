@@ -6,7 +6,7 @@ for i = -10:10
     j = i + 11;
     %CHANGE THIS DEPENDING ON WHAT DEVICE YOU ARE USING
     smset("Yoko", i)
-    pause(1)
+    pause(25)
     fprintf(smdata.inst(18).data.inst, 'ARNG 0');
     pause(2)
     fprintf(smdata.inst(18).data.inst, 'ARNG 1');
@@ -16,7 +16,7 @@ for i = -10:10
     fprintf(smdata.inst(18).data.inst, 'ARNG');
     pause(1)
     fprintf(smdata.inst(18).data.inst, 'STRT');
-    pause(10)
-    yoko_100k_v_001(:,j) = NoiseMeasurement(4);
+    pause(25)
+    yoko_195_v_001(:,j) = NoiseMeasurement(4);
 end
 
