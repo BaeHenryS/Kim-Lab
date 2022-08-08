@@ -5,8 +5,8 @@
 for i = -10:10
     j = i + 11;
     %CHANGE THIS DEPENDING ON WHAT DEVICE YOU ARE USING
-    smset("Yoko", i)
-    pause(25)
+    smset("DecaDAC", i)
+    pause(15)
     fprintf(smdata.inst(18).data.inst, 'ARNG 0');
     pause(2)
     fprintf(smdata.inst(18).data.inst, 'ARNG 1');
@@ -17,6 +17,6 @@ for i = -10:10
     pause(1)
     fprintf(smdata.inst(18).data.inst, 'STRT');
     pause(25)
-    yoko_195_v_001(:,j) = NoiseMeasurement(4);
+    decadac_100k_v_001(:,j) = NoiseMeasurement(4);
 end
 
