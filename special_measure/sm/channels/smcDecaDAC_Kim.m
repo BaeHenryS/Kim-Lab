@@ -1,37 +1,35 @@
-function val = smcDecaDAC(ic, val, rate)
+function val = smcDecaDAC_Kim(ic, val, rate)
 % 1-12 = channel 0 - 11
 
 global smdata;
 
+
+% Implementing the Voltage Send:
+% Instrument: smdata.inst(ic(1))
+% Channel 
 switch ic(3)
     case 1
-        val = round((val - smdata.inst(ic(1)).data.rng(ic(2), 1))...
-            / diff(smdata.inst(ic(1)).data.rng(ic(2), :)) * 65535);
-        val = max(min(val, 65535), 0);
-        try
-            query(smdata.inst(ic(1)).data.inst, ...
-                sprintf('B%1d;C%1d;D%05d;', floor((ic(2)-1)/4), mod(ic(2)-1, 4), val));
-        catch
-            fprintf('WARNING: error in DAC communication. Flushing buffer.\n');
-            smflush(ic(1));
-        end
-        val = 0;
-
+        fprintf("Hi")
     case 0
-        try
-            val = query(smdata.inst(ic(1)).data.inst, ...
-                sprintf('B%1d;C%1d;d;', floor((ic(2)-1)/4), mod(ic(2)-1, 4)), '%s\n', '%*7c%d');
-        catch
-            fprintf('WARNING: error in DAC communication. Flushing buffer.\n');
-            smflush(ic(1));
+       
+        range = smdata.inst(ic(1)).data.rng(floor((ic(2)-1)/2)+1);
+        fprintf(string(val))
+        fprintf(string(range))
+        if val > range || val < -range
+            voltageBin = 0;
+        else
+            voltageBin = floor((val + range)/(2 * range) * 65535);
+            if voltageBin < 0
+                voltageBin = 0;
+            elseif voltageBin > 65535
+                voltageBin = 65535;
+            end
+            
         end
-
+        fprintf(string(voltageBin))
+        fprintf('B %1d;C %1d;M 3;D %5d;', floor((ic(2)-1)/2), mod(ic(2), 2), voltageBin)
         
-        val = val*diff(smdata.inst(ic(1)).data.rng(ic(2), :))/65535 ...
-            + smdata.inst(ic(1)).data.rng(ic(2), 1);
-
-    otherwise
-        error('Operation not supported');
-
+        writeline(smdata.inst(ic(1)).data.inst, sprintf('B %1d;C %1d;M 3;D %5d;', floor((ic(2)-1)/2), mod(ic(2), 2), voltageBin))
+        fprintf("Hello")
 end
         
