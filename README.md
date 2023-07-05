@@ -26,7 +26,7 @@ To load the SR770 into your own channel file:
 > - Correctly set GPIB Primary Address:
 > Ex:  `smdata.inst(18).data.inst=gpib('NI',0,10)`
 > - The Buffer Size is Greater than 800
-> `smdata.inst(18).data.inst.inputBufferSize = 1024`
+> `smdata.inst(18).data.inst.inputBufferSize = 8192`
 >(Again, switch 18 with the appropriate instrument number.)
 
 ## 1.2: Getting Data Using Special Measure

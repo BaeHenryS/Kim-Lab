@@ -1,4 +1,5 @@
-%Used Kim-Lab\Performance Measure\Noise\2022_07_25\Noise20220725_1_Workspace.mat
+% Noise Measurement Plot at -10V-10V Output with 1/f Fit , 0 - 195Hz
+% Used Kim-Lab\Performance Measure\Noise\2022_07_25\Noise20220725_1_Workspace.mat
 % 
 
 oneoverx_fit_195 = figure;

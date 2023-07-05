@@ -1,3 +1,8 @@
+% DAC Noise Measurement Plot at 1V Output, 0 - 100kHz, 0-195Hz
+% Used Kim-Lab\Performance Measure\Noise\2022_07_21\Noise20220721_1_Workspace.mat
+% 
+
+
 
 dacnoise_100k = figure;
 figure(dacnoise_100k)
@@ -41,3 +46,5 @@ xlabel('Frequency $$(Hz)$$','Interpreter','latex','FontSize',16)
 ylabel('Noise $$(nV/\sqrt{Hz})$$','Interpreter','latex','FontSize',16)
 
 hold off
+
+

@@ -1,20 +1,23 @@
 
-dacv0_100k_vb_001_mod = dacv0_100k_vb_001;
+dac_LTC6655_100k_v_001_mod = dac_LTC6655_100k_v_001;
 
 
-dacv0_100k_vb_001_mod(1:10,:) = [];
+%dac_LTC6655_100k_v_001_mod(1:10,:) = [];
 
 x_100k_mod = x_100k;
 
-x_100k_mod(:,1:10) = [];
+%x_100k_mod(:,1:10) = [];
 
 x_100k_mod = reshape(x_100k_mod, [],1);
+DACNoise_ranged_norm_100k = figure;
+figure(DACNoise_ranged_norm_100k)
+
 
 
 legendcolors = jet(21);
 
 for i = 1:21
-   plot(x_100k_mod, dacv0_100k_vb_001_mod(:,i), 'DisplayName',string(i), 'Color',legendcolors(i,:))
+   semilogy(x_100k_mod, dac_LTC6655_100k_v_001_mod(:,i)*10^9, 'DisplayName',string(i), 'Color',legendcolors(i,:))
    hold on
 end
 
@@ -27,8 +30,9 @@ cbh.Label.String = 'Voltage (V)';
 cbh.Label.FontSize = 20;
 cbh.Label.Interpreter = 'latex';
 
-title('Noise Measurement Plot at -10V - 10V Output, 0 - 100kHz','Interpreter','latex','FontSize',24)
+title('DAC Noise Measurement Plot at -10V - 10V Output, 0 - 100kHz with LTC6655','Interpreter','latex','FontSize',24)
 xlabel('Frequency $$(kHz)$$','Interpreter','latex','FontSize',16)
 ylabel('Noise $$(nV/\sqrt{Hz})$$','Interpreter','latex','FontSize',16)
+
 
 

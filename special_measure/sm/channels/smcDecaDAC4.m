@@ -62,7 +62,11 @@ switch ic(3)
         else
             dacwrite(smdata.inst(ic(1)).data.inst, ...
                     sprintf('B%1d;C%1d;D%05d;', floor((ic(2)-1)/8), floor(mod(ic(2)-1, 8)/2), val));
+
+           %dacwrite(smdata.inst(ic(1)).data.inst, ...
+           %         sprintf('B%1d;C%1d;D%05d;',1,0 , val));
             val = 0;
+          
         end
 
 
@@ -88,6 +92,7 @@ catch
         fprintf(fscanf(inst));
     end
 end
+
 
 function val = dacread(inst, str, format)
 if nargin < 3

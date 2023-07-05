@@ -15,12 +15,23 @@ if len(arduino_ports) > 1:
     
 ser = serial.Serial(arduino_ports[0], 115200, timeout = 1)
     
+global initialized
 
 
 def initialize():
-    ser.write(str.encode('INITIALIZE\r'))
-    print("Initialized")
+    if initialized == 0:
+        ser.write(str.encode('INITIALIZE\r'))
+        initialized = 1
+        print("Initialized")
+    else:
+        print("Already Initialized!")
 
-def setVoltage(voltage):
-    ser.write(str.encode('SET,0,'+str(voltage)+'\r'))
+def setVoltage(voltage, channel):
+    #ser.write(str.encode('SET,0,'+str(voltage)+'\r'))
+    ser.write(str.encode('SET,' + str(channel) + ','+str(voltage)+'\r'))
+    print(ser.write(str.encode('SET,0,'+str(voltage)+'\r')))
+
+
+def readline():
+    ser.readline()
 

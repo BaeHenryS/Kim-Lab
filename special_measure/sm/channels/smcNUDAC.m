@@ -21,8 +21,9 @@ switch ic(3)
         
         
         
-        py.dacset.setVoltage(value)
+        py.dacset.setVoltage(value, ic(2)-1)
         disp(append('Voltage Set to ', string(value) , ' Volts'))
+        disp(ic(2))
 
     
     case 0
